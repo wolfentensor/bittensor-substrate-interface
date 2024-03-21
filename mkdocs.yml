@@ -1,0 +1,97 @@
+site_name: Python Substrate Interface Docs
+repo_url: https://github.com/polkascan/py-substrate-interface
+edit_uri: edit/master/docs/
+site_description: Python library to interface with Substrate
+
+theme:
+  name: "material"
+  logo: https://avatars.githubusercontent.com/u/43450475
+  features:
+    # - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    # - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+#    - toc.integrate
+
+plugins:
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+#            docstring_section_style: list
+            members_order: source
+            show_root_heading: false
+            show_source: false
+            show_signature_annotations: true
+            docstring_style: numpy
+            heading_level: 2
+
+  - autorefs
+  - search
+
+extra:
+  social:
+  - icon: fontawesome/brands/github
+    link: https://github.com/polkascan
+  - icon: fontawesome/brands/twitter
+    link: https://twitter.com/polkascan
+
+nav:
+  - Overview: index.md
+  - Getting started:
+    - getting-started/installation.md
+    - getting-started/common-concepts.md
+  - Usage:
+    - usage/query-storage.md
+    - usage/using-scaletype-objects.md
+    - usage/subscriptions.md
+    - usage/keypair-creation-and-signing.md
+    - usage/extrinsics.md
+    - usage/call-runtime-apis.md
+    - usage/ink-contract-interfacing.md
+    - usage/extensions.md
+    - usage/cleanup-and-context-manager.md
+  - Function Reference:
+    - reference/base.md
+    - reference/keypair.md
+    - reference/contracts.md
+    - reference/interfaces.md
+    - reference/extensions.md
+    - reference/storage.md
+  - Examples: examples.md
+  - Extensions:
+      - extensions/index.md
+      - extensions/substrate-node-extension.md
+      - extensions/polkascan-extension.md
+      - extensions/subsquid-extension.md
+  - Metadata docs: https://polkascan.github.io/py-substrate-metadata-docs/
+
+
+markdown_extensions:
+  - toc:
+      permalink: true
+      toc_depth: 4
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+

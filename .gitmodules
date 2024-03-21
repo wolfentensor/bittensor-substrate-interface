@@ -1,0 +1,3 @@
+[submodule "substrateinterface"]
+	path = substrateinterface
+	url = https://github.com/polkascan/py-substrate-interface
