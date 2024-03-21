@@ -38,6 +38,8 @@ from scalecodec.types import (
 )
 from scalecodec.type_registry import load_type_registry_preset
 from scalecodec.updater import update_type_registries
+
+from substrateinterface import SubstrateInterface
 from substrateinterface.extensions import Extension
 from substrateinterface.interfaces import ExtensionInterface
 
@@ -56,9 +58,29 @@ from substrateinterface.keypair import Keypair, KeypairType, MnemonicLanguageCod
 from substrateinterface.utils.ss58 import ss58_decode, ss58_encode, is_valid_ss58_address, get_ss58_format
 
 
-__all__ = ["SubtensorInterface", "logger"]
+__all__ = ["BittensorSubstrateInterface", "logger"]
 
 logger = logging.getLogger(__name__)
 
 
-class SubtensorInterface(SubstrateInterface)
+class BittensorSubstrateInterface(SubstrateInterface):
+
+    def __init__(self):
+        super().__init__(url="wss://node.bittensor.com", type_registry_preset="bittensor")
+
+        warnings.filterwarnings("ignore")
+
+    def initialize(self):
+        pass
+
+    def rpc_request(self, method, params, result_handler=None):
+        pass
+
+
+
+
+
+
+
+
+
